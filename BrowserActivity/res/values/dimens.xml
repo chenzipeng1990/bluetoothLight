@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="actionbar_home_width">190dp</dimen>
+    <dimen name="list_padding">10dp</dimen>
+    <dimen name="shadow_width">20dp</dimen>
+    <!-- light -->
+    <dimen name="control_button_width">60dp</dimen>
+	<dimen name="control_button_height">60dp</dimen>
+	<dimen name="control_button_text_size">10dp</dimen>
+	<dimen name="control_mode_button_text_size">10dp</dimen>
+</resources>

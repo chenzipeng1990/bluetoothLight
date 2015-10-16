@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center" >
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="4"
+        android:orientation="horizontal"
+        android:rowCount="6"
+        android:useDefaultMargins="true" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="4"
+            android:layout_gravity="fill"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginRight="5dp"
+                android:text="@string/control_mode_value" />
+
+            <SeekBar
+                android:id="@+id/control_modeValue_seekbar"
+                style="@style/controlModeValueSeekbar" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/control_brightness_up"
+            style="@style/controlButton"
+            android:text="@string/control_brightness_up" />
+
+        <Button
+            android:id="@+id/control_brightness_down"
+            style="@style/controlButton"
+            android:text="@string/control_brightness_down" />
+
+        <Button
+            android:id="@+id/control_trun_on"
+            style="@style/controlButton"
+            android:text="@string/control_trun_on" />
+
+        <Button
+            android:id="@+id/control_trun_off"
+            style="@style/controlButton"
+            android:text="@string/control_trun_off" />
+
+        <!-- row2 -->
+
+        <Button
+            android:id="@+id/control_color_R"
+            style="@style/controlButton"
+            android:background="@drawable/control_button_r1"
+            android:text="@string/control_color_R" />
+
+        <Button
+            android:id="@+id/control_color_G"
+            style="@style/controlButton"
+            android:background="@drawable/control_button_g1"
+            android:text="@string/control_color_G" />
+
+        <Button
+            android:id="@+id/control_color_B"
+            style="@style/controlButton"
+            android:background="@drawable/control_button_b1"
+            android:text="@string/control_color_B" />
+
+        <Button
+            android:id="@+id/control_color_W"
+            style="@style/controlButton"
+            android:text="@string/control_color_W" />
+
+        <!-- row3 -->
+
+        <Button
+            android:id="@+id/control_color_R_1"
+            style="@style/controlButton"
+            android:background="@drawable/control_button_r2" />
+
+        <Button
+            android:id="@+id/control_color_G_1"
+            style="@style/controlButton"
+            android:background="@drawable/control_button_g2" />
+
+        <Button
+            android:id="@+id/control_color_B_1"
+            style="@style/controlButton"
+            android:background="@drawable/control_button_b2" />
+
+        <Button
+            android:id="@+id/control_flash"
+            style="@style/controlModeButton"
+            android:text="@string/control_flash" />
+        <!-- row4 -->
+
+        <Button
+            android:id="@+id/control_color_R_2"
+            style="@style/controlButton"
+            android:background="@drawable/control_button_r3" />
+
+        <Button
+            android:id="@+id/control_color_G_2"
+            style="@style/controlButton"
+            android:background="@drawable/control_button_g3" />
+
+        <Button
+            android:id="@+id/control_color_B_2"
+            style="@style/controlButton"
+            android:background="@drawable/control_button_b3" />
+
+        <Button
+            android:id="@+id/control_strobe"
+            style="@style/controlModeButton"
+            android:text="@string/control_strobe" />
+
+        <!-- row5 -->
+
+        <Button
+            android:id="@+id/control_color_R_3"
+            style="@style/controlButton"
+            android:background="@drawable/control_button_r4" />
+
+        <Button
+            android:id="@+id/control_color_G_3"
+            style="@style/controlButton"
+            android:background="@drawable/control_button_g4" />
+
+        <Button
+            android:id="@+id/control_color_B_3"
+            style="@style/controlButton"
+            android:background="@drawable/control_button_b4" />
+
+        <Button
+            android:id="@+id/control_fade"
+            style="@style/controlModeButton"
+            android:text="@string/control_fade" />
+        <!-- row6 -->
+
+        <Button
+            android:id="@+id/control_color_R_4"
+            style="@style/controlButton"
+            android:background="@drawable/control_button_r5" />
+
+        <Button
+            android:id="@+id/control_color_G_4"
+            style="@style/controlButton"
+            android:background="@drawable/control_button_g5" />
+
+        <Button
+            android:id="@+id/control_color_B_4"
+            style="@style/controlButton"
+            android:background="@drawable/control_button_b5" />
+
+        <Button
+            android:id="@+id/control_smoot"
+            style="@style/controlModeButton"
+            android:text="@string/control_smoot" />
+    </GridLayout>
+
+</RelativeLayout>
