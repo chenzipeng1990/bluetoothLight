@@ -1,0 +1,7 @@
+<resources>
+    <!-- light -->
+    <dimen name="control_button_width">100dp</dimen>
+	<dimen name="control_button_height">100dp</dimen>
+	<dimen name="control_button_text_size">18dp</dimen>
+	<dimen name="control_mode_button_text_size">18dp</dimen>
+</resources>
