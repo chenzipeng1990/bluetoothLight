@@ -657,10 +657,10 @@ public class BrowserActivity extends BaseActivity implements OnAudioFocusChangeL
 
 	private void initFragment() {
 		getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
-		//mFragmentTag = SlideoutMenuFragment.FRAGMENT_TAG_CONNECTION;
-		//initFragment(new ConnectionFragment(), false, 0);
-		mFragmentTag = SlideoutMenuFragment.FRAGMENT_TAG_LIGHT;
-		initFragment(new LightFragment(), false, 0);
+		mFragmentTag = SlideoutMenuFragment.FRAGMENT_TAG_CONNECTION;
+		initFragment(new ConnectionFragment(), false, 0);
+//		mFragmentTag = SlideoutMenuFragment.FRAGMENT_TAG_LIGHT;
+//		initFragment(new LightFragment(), false, 0);
 	}
 
 	private void initFragment(Fragment fragment, boolean specialCatalogSelected, int selectedMode) {
