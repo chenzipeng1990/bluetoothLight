@@ -599,7 +599,7 @@ public class BrowserActivity extends BaseActivity implements OnAudioFocusChangeL
 
 					// Initializes the state of whether to support the feature
 					mSlideoutMenuFragment.setFeatureFilter();
-					getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+					getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
 				}
 			});
 		}
@@ -1147,32 +1147,41 @@ public class BrowserActivity extends BaseActivity implements OnAudioFocusChangeL
 			showDAEDialog();
 			break;
 		}
-		if (menu != null) {
-			com.actionbarsherlock.view.MenuItem noneItem, eqItem, daeItem;
-			noneItem = menu.findItem(R.id.nodigitalsoundeffect);
-			eqItem = menu.findItem(R.id.eqsoundeffect);
-			daeItem = menu.findItem(R.id.daesoundeffect);
-			noneItem.setCheckable(false);
-			eqItem.setCheckable(false);
-			daeItem.setCheckable(false);
-			int currentDAEMode = getCurrentDAEMode();
-			switch (currentDAEMode) {
-			case DAEMode.NONE:
-				noneItem.setCheckable(true);
-				noneItem.setChecked(true);
-				break;
-			case DAEMode.EQ:
-				eqItem.setCheckable(true);
-				eqItem.setChecked(true);
-				break;
-			case DAEMode.DAE:
-				daeItem.setCheckable(true);
-				daeItem.setChecked(true);
-				break;
-			default:
-				break;
+		//不显示 右上角按钮，作为 打开模式的的按钮
+		if(menu != null){
+			if(getSlidingMenu().isMenuShowing()){
+				getSlidingMenu().showContent(true);
+			}else{
+				getSlidingMenu().showMenu(true);
 			}
 		}
+		
+//		if (menu != null) {
+//			com.actionbarsherlock.view.MenuItem noneItem, eqItem, daeItem;
+//			noneItem = menu.findItem(R.id.nodigitalsoundeffect);
+//			eqItem = menu.findItem(R.id.eqsoundeffect);
+//			daeItem = menu.findItem(R.id.daesoundeffect);
+//			noneItem.setCheckable(false);
+//			eqItem.setCheckable(false);
+//			daeItem.setCheckable(false);
+//			int currentDAEMode = getCurrentDAEMode();
+//			switch (currentDAEMode) {
+//			case DAEMode.NONE:
+//				noneItem.setCheckable(true);
+//				noneItem.setChecked(true);
+//				break;
+//			case DAEMode.EQ:
+//				eqItem.setCheckable(true);
+//				eqItem.setChecked(true);
+//				break;
+//			case DAEMode.DAE:
+//				daeItem.setCheckable(true);
+//				daeItem.setChecked(true);
+//				break;
+//			default:
+//				break;
+//			}
+//		}
 	}
 
 	public void showAlarmDialog(AlertDialog adg) {

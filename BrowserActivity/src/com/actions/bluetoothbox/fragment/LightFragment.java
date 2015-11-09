@@ -127,17 +127,17 @@ public class LightFragment extends SherlockFragment {
 				return;
 			}
 
-			Log.i(TAG, "control mode onProgressChanged " + seekBar.getProgress());
-			int value = getSelectedModeValue();
-			
 			mBluetoothLightCommond = BluetoothLightDao.getInstance(mActivity).loadBluetoothLightCommond(mBluetoothLightCommond);
 
 			switch (mSeekBarMode) {
 			case SEEKBAR_MODE_BRIGHT:
-				mBluetoothLightCommond.setBright(value);
+				//灯的亮度值范围 0~10,忽略10
+				int bright = seekBar.getProgress();
+				mBluetoothLightCommond.setBright(bright);
 				break;
 			case SEEKBAR_MODE_MODE:
-				mBluetoothLightCommond.setModeValue(value);
+				//模式的值应该为取反，值越小越快
+				mBluetoothLightCommond.setModeValue(getSelectedModeValue());
 				break;
 			default:
 				break;
@@ -241,7 +241,7 @@ public class LightFragment extends SherlockFragment {
 				mBluetoothLightCommond.gMax = 100;
 				mBluetoothLightCommond.bMax = 0;
 				mBluetoothLightCommond.rMin = 10;
-				mBluetoothLightCommond.gMin = 10;
+				mBluetoothLightCommond.gMin = 40;
 				mBluetoothLightCommond.bMin = 0;
 				mBluetoothLightCommond.rBrightMax = 10;
 				mBluetoothLightCommond.gBrightMax = 10;
@@ -299,7 +299,7 @@ public class LightFragment extends SherlockFragment {
 				mBluetoothLightCommond.bMax = 80;
 				mBluetoothLightCommond.rMin = 0;
 				mBluetoothLightCommond.gMin = 10;
-				mBluetoothLightCommond.bMin = 30;
+				mBluetoothLightCommond.bMin = 40;
 				mBluetoothLightCommond.rBrightMax = 0;
 				mBluetoothLightCommond.gBrightMax = 10;
 				mBluetoothLightCommond.bBrightMax = 8;
@@ -367,7 +367,7 @@ public class LightFragment extends SherlockFragment {
 				mBluetoothLightCommond.rMax = 80;
 				mBluetoothLightCommond.gMax = 0;
 				mBluetoothLightCommond.bMax = 100;
-				mBluetoothLightCommond.rMin = 30;
+				mBluetoothLightCommond.rMin = 40;
 				mBluetoothLightCommond.gMin = 0;
 				mBluetoothLightCommond.bMin = 10;
 				mBluetoothLightCommond.rBrightMax = 8;
@@ -451,7 +451,10 @@ public class LightFragment extends SherlockFragment {
 
 	private int getSelectedModeValue() {
 		// 因为 档值是从1~10 所以+1
-		return mModeValueSeekbar.getProgress() + 1;
+		//模式的值应该为取反，值越小越快
+		int value = mModeValueSeekbar.getProgress() + 1;
+		value = 10 - value;
+		return value ;
 	}
 
 	private void switchFragment() {
@@ -463,7 +466,7 @@ public class LightFragment extends SherlockFragment {
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		super.onCreateOptionsMenu(menu, inflater);
 		mMenu = menu;
-		inflater.inflate(R.menu.soundsetting_menu, menu);
+		inflater.inflate(R.menu.light_menu, menu);
 	}
 
 	@Override

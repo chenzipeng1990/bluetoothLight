@@ -35,7 +35,9 @@ public abstract class BaseActivity extends SlidingSherlockFragmentActivity imple
 		mSlidingMenu.setBehindWidth((int) (230 * Utils.screenDensity(getApplicationContext())));// god
 																								// bless
 		// gesture mode
-		mSlidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+		//mSlidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+		//È¡Ïû»¬¶¯
+		mSlidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
 		setSlidingActionBarEnabled(false);
 	}
 

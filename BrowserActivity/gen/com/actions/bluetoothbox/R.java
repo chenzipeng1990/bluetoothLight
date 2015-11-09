@@ -1636,10 +1636,11 @@ containing a value of this type.
         public static final int connection_menu=0x7f0d0000;
         public static final int disconnection_menu=0x7f0d0001;
         public static final int eqsetting_menu=0x7f0d0002;
-        public static final int listsetting4alarmclock_menu=0x7f0d0003;
-        public static final int listsetting4radio_menu=0x7f0d0004;
-        public static final int radio_menu=0x7f0d0005;
-        public static final int soundsetting_menu=0x7f0d0006;
+        public static final int light_menu=0x7f0d0003;
+        public static final int listsetting4alarmclock_menu=0x7f0d0004;
+        public static final int listsetting4radio_menu=0x7f0d0005;
+        public static final int radio_menu=0x7f0d0006;
+        public static final int soundsetting_menu=0x7f0d0007;
     }
     public static final class string {
         public static final int ab_subtitle=0x7f0a000e;
